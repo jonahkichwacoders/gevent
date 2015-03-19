@@ -86,7 +86,6 @@ ARES.optional = True
 
 
 ext_modules = [CORE,
-               ARES,
                Extension(name="gevent._semaphore",
                          sources=["gevent/gevent._semaphore.c"]),
                Extension(name="gevent._util",
