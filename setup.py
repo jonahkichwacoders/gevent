@@ -179,6 +179,9 @@ if LIBEV_EMBED:
 else:
     CORE.libraries.append('ev')
 
+# Turn off optimzations, see Cyan Bug 5928
+os.environ["CFLAGS"] = ("%s %s" % (os.environ.get("CFLAGS", ""), "-O0")).lstrip()
+
 
 if CARES_EMBED:
     ARES.sources += expand('c-ares/*.c')
